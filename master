@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <libxml/parser.h>
+Int main()
+{
+xmlDoc *doc = NULL;
+xmlNode *root_element = NULL;
+doc = xmlReadFile(“catalog.xml”, NULL, 0);
+if (doc == NULL) {
+printf(“error: could not parse file catalog.xml\n”);
+return 0;
+root_element = xmlDocGetRootElement(doc);
+xmlNode *cur_node = NULL;
+for (cur_node->type == XML_ELEMENT_NODE);
+printf(“node type: Element, name: %s\n”, curr_node->name);
+}
+}
+xmlFreeDoc(doc);
+return 0;
+}
