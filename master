@@ -19,3 +19,5 @@ printf(“node type: Element, name: %s\n”, curr_node->name);
 xmlFreeDoc(doc);
 return 0;
 }
+
+/*testing*/
