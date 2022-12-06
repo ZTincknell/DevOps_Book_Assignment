@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <libxml/parser.h>
-Int main()
+int main()
 {
 xmlDoc *doc = NULL;
 xmlNode *root_element = NULL;
@@ -13,7 +13,7 @@ return 0;
 root_element = xmlDocGetRootElement(doc);
 xmlNode *cur_node = NULL;
 for (cur_node->type == XML_ELEMENT_NODE);
-printf(“node type: Element, name: %s\n”, curr_node->name);
+printf(“node type: Element, name: %s\n”, cur_node->name);
 }
 }
 xmlFreeDoc(doc);
