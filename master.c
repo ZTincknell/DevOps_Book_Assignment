@@ -16,7 +16,7 @@ int main(void)
    while ((read = getline(&line, &len, fp)) != -1) {
     if (strstr(line, "title") != NULL) {
       char *start = strstr(line, ">") + 1;
-      char *end = strstr(lilne, "<");
+      char *end = strstr(line, "<");
       int length = end - start;
       char title[length + 1];
       strncpy(title, start, length);
