@@ -1,23 +1,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <libxml/parser.h>
-int main()
-{
-xmlDoc *doc = NULL;
-xmlNode *root_element = NULL;
-doc = xmlReadFile(“catalog.xml”, NULL, 0);
-if (doc == NULL) {
-printf(“error: could not parse file catalog.xml\n”);
-return 0;
-root_element = xmlDocGetRootElement(doc);
-xmlNode *cur_node = NULL;
-for (cur_node->type == XML_ELEMENT_NODE);
-printf(“node type: Element, name: %s\n”, cur_node->name);
-}
-}
-xmlFreeDoc(doc);
-return 0;
-}
 
-/*testing*/
+int main(void)
+{
+  FILE *fp;
+  char *line = NULL;
+  size_t len = 0;
+  ssize_t read;
+  
+  fp = fopen("catalog.xml", "r");
+  if (fp == NULL)
+    exit(EXIT_FAILURE);
+    
+   while ((read = getline(&line, &len, fp)) != -1) {
+    if (strstr(line, "title") != NULL) {
+      char *start = strstr(line, ">") + 1;
+      char *end = strstr(lilne, "<");
+      int length = end - start;
+      char title[length + 1];
+      strncpy(title, start, length);
+      title[length] = '\0';
+      
+      printf("Title: %s\n", title);
+     }
+    }
+    
+    fclose(fp);
+    if (line)
+      free(line);
+    exit(EXIT_SUCCESS);
+}
